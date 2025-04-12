@@ -5,12 +5,17 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*"
+        "microphone": "*",
+        "pxt-nezha": "github:elecfreaks/pxt-nezha#v1.3.9",
+        "pxt-dht11": "github:mkleinsb/pxt-dht11#v0.1.2",
+        "pxt-PlanetX": "github:elecfreaks/pxt-planetx#v1.5.33",
+        "gatorSoil": "github:sparkfun/pxt-gator-soil#v1.1.2"
     },
     "files": [
         "README.md",
         "main.blocks",
-        "main.ts"
+        "main.ts",
+        "main.py"
     ],
     "testFiles": [
         "test.ts"
@@ -23,5 +28,5 @@
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "pyprj"
 }
