@@ -1,6 +1,6 @@
 humidity = 0
 temp_raum = 0
-g_temp = 24
+g_temp = 40
 DHT11.set_pin(DigitalPin.P2)
 neZha.set_motor_speed(neZha.MotorList.M4, 0)
 
@@ -14,6 +14,7 @@ def on_forever():
     PlanetX_Display.show_user_text(5, "Luftfeuchtigkeit:")
     PlanetX_Display.show_user_number(8, humidity)
     pumpe()
+    led()
 basic.forever(on_forever)
 
 def pumpe():
@@ -28,3 +29,16 @@ def pumpe():
         neZha.set_motor_speed(neZha.MotorList.M4, -50)
     elif drunter <= -3:
         neZha.set_motor_speed(neZha.MotorList.M4, -100)
+
+def led():
+    drunter = g_temp - temp_raum
+    if drunter == 0:
+        led1.off
+        led2.off
+        if drunter >= 1:
+            led2.off
+            led1.circle(Red)
+            if drunter < 0:
+            led1.off
+                led2.circle(Blue)
+

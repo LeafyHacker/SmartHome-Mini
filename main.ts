@@ -1,6 +1,6 @@
 let humidity = 0
 let temp_raum = 0
-let g_temp = 24
+let g_temp = 40
 DHT11.setPin(DigitalPin.P2)
 neZha.setMotorSpeed(neZha.MotorList.M4, 0)
 basic.forever(function on_forever() {
@@ -13,6 +13,7 @@ basic.forever(function on_forever() {
     PlanetX_Display.showUserText(5, "Luftfeuchtigkeit:")
     PlanetX_Display.showUserNumber(8, humidity)
     pumpe()
+    led
 })
 function pumpe() {
     let drunter = g_temp - temp_raum
